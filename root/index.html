@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRM AI - Công cụ AI dự đoán giá chứng khoán</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f6f9;
+      color: #1b1e23;
+    }
+    .navbar {
+      background-color: #06192d;
+    }
+    .navbar-brand {
+      color: #00f5a0;
+      font-weight: bold;
+    }
+    .nav-link {
+      color: white;
+      margin-right: 15px;
+    }
+    .nav-link:hover {
+      color: #00f5a0;
+    }
+    .hero {
+      background: linear-gradient(to right, #06192d, #003e6b);
+      color: white;
+      padding: 100px 0;
+    }
+    .btn-primary {
+      background-color: #00f5a0;
+      border: none;
+      font-weight: bold;
+      color: #06192d;
+    }
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #00f5a0;
+    }
+    footer {
+      background-color: #06192d;
+      color: #aaa;
+      padding: 20px 0;
+    }
+    .card {
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">FRM AI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#features">Tính năng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#demo">Minh họa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Liên hệ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero text-center">
+  <div class="container" data-aos="fade-up">
+    <h1 class="display-4 fw-bold">FRM AI</h1>
+    <p class="lead">Công cụ AI hỗ trợ dự đoán giá cổ phiếu và phân tích thị trường tài chính</p>
+    <a href="#features" class="btn btn-primary btn-lg mt-3">Khám phá công cụ</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Tính năng nổi bật</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-4 h-100 text-center">
+          <div class="feature-icon mb-3">📈</div>
+          <h5>Dự đoán giá cổ phiếu</h5>
+          <p>Sử dụng học máy để đưa ra dự báo chính xác theo thời gian thực.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card p-4 h-100 text-center">
+          <div class="feature-icon mb-3">📊</div>
+          <h5>Phân tích kỹ thuật</h5>
+          <p>Gợi ý điểm mua - bán dựa trên tín hiệu và dữ liệu lịch sử.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card p-4 h-100 text-center">
+          <div class="feature-icon mb-3">🔔</div>
+          <h5>Cảnh báo biến động</h5>
+          <p>Thông báo ngay khi có biến động đáng chú ý từ thị trường.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Giới thiệu FRM AI</h2>
+    <p data-aos="fade-up" class="text-center">FRM AI là nền tảng trí tuệ nhân tạo được thiết kế để hỗ trợ nhà đầu tư ra quyết định thông minh hơn. Bằng cách học từ dữ liệu lịch sử và phân tích xu hướng, công cụ giúp bạn giảm thiểu rủi ro và tối đa hóa lợi nhuận.</p>
+  </div>
+</section>
+
+<!-- Demo Section -->
+<section id="demo" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Minh họa hoạt động</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-4">
+          <p>Biểu đồ mô phỏng dự báo giá cổ phiếu, ví dụ: VHM, VIC, FPT...</p>
+          <img src="https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/ContentImage/Pennant.png/jcr:content/renditions/original-size.webp" class="img-fluid" alt="Demo Chart">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Liên hệ & Dùng thử</h2>
+    <form class="row g-3" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Họ và tên">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="4" placeholder="Nội dung hoặc yêu cầu"></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button  type="submit" class="btn btn-primary px-5">Gửi yêu cầu</button>
+      </div>
+    </form>
+  </div>
+</section>
+<a href="page/layout2.html">Qua layout 2</a>
+<!-- Footer -->
+<footer class="text-center">
+  <p>© 2025 FRM AI. Công cụ AI phân tích chứng khoán tiềm năng hàng đầu Việt Nam.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
