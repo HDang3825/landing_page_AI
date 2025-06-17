@@ -3,139 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FRM AI - Công cụ AI dự đoán giá chứng khoán</title>
+  <title>FRM AI - Dự đoán giá chứng khoán bằng AI</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f6f9;
-      color: #1b1e23;
+      background: linear-gradient(to bottom, #eef2f3, #ffffff);
+      color: #1b1b1b;
+      scroll-behavior: smooth;
     }
     .navbar {
-      background-color: #06192d;
+      background-color: #001f3f;
     }
-    .navbar-brand {
-      color: #00f5a0;
-      font-weight: bold;
-    }
-    .nav-link {
-      color: white;
-      margin-right: 15px;
-    }
-    .nav-link:hover {
-      color: #00f5a0;
+    .navbar-brand, .nav-link {
+      color: #00f5a0 !important;
+      font-weight: 600;
     }
     .hero {
-      background: linear-gradient(to right, #06192d, #003e6b);
+      background: linear-gradient(to right, #001f3f, #0074D9);
       color: white;
-      padding: 100px 0;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 1.25rem;
     }
     .btn-primary {
       background-color: #00f5a0;
       border: none;
-      font-weight: bold;
-      color: #06192d;
+      color: #003344;
+      font-weight: 600;
     }
     .section-title {
-      font-weight: 700;
-      margin-bottom: 30px;
-    }
-    .feature-icon {
       font-size: 2.5rem;
-      color: #00f5a0;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
     }
     footer {
-      background-color: #06192d;
-      color: #aaa;
-      padding: 20px 0;
+      background-color: #001f3f;
+      color: #ccc;
+      padding: 30px 0;
     }
-    .card {
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-      transition: all 0.3s;
+    .icon-box {
+      font-size: 40px;
+      color: #00d6a0;
+      margin-bottom: 15px;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    .bg-lightblue {
+      background-color: #f1f9ff;
     }
+    .background-logo {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+}
+
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">FRM AI</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <a class="navbar-brand " href="#">FRM</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navContent">
+      <span class="navbar-toggler-icon bg-light"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navContent">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#features">Tính năng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Giới thiệu</a>
-        </li>
+        <li class="nav-item"><a href="#features" class="nav-link">Tính năng</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">Giới thiệu</a></li>
+        <li class="nav-item"><a href="http://localhost:8080/" class="nav-link">Chức năng</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#demo">Minh họa</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Liên hệ</a>
-        </li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Liên hệ</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero text-center">
-  <div class="container" data-aos="fade-up">
-    <h1 class="display-4 fw-bold">FRM AI</h1>
-    <p class="lead">Công cụ AI hỗ trợ dự đoán giá cổ phiếu và phân tích thị trường tài chính</p>
-    <a href="#features" class="btn btn-primary btn-lg mt-3">Khám phá công cụ</a>
+<!-- Hero -->
+<section class="hero" id="home">
+   <!-- Video nền -->
+    <video width="900vh" autoplay muted loop class="video-bg">
+      <source src="./img/video_banner.mp4" type="video/mp4">
+      Trình duyệt không hỗ trợ video.
+    </video>
+  <div class="background-logo">
+
+   
+
+    <!-- Nội dung phủ trên video -->
+    <div class="overlay-content container">
+      <h1 data-aos="fade-up"></h1>
+      <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+        Công cụ AI giúp bạn phân tích và dự đoán giá cổ phiếu một cách thông minh và chính xác
+      </p>
+      <a href="#features" class="btn btn-primary btn-lg" data-aos="zoom-in" data-aos-delay="200">
+        Khám phá ngay
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- Features Section -->
-<section id="features" class="py-5">
+<!-- Features -->
+<section id="features" class="py-5 bg-lightblue">
   <div class="container">
     <h2 class="section-title text-center" data-aos="fade-up">Tính năng nổi bật</h2>
     <div class="row g-4">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card p-4 h-100 text-center">
-          <div class="feature-icon mb-3">📈</div>
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-chart-line"></i></div>
           <h5>Dự đoán giá cổ phiếu</h5>
-          <p>Sử dụng học máy để đưa ra dự báo chính xác theo thời gian thực.</p>
+          <p>Phân tích dữ liệu lịch sử và dự đoán xu hướng giá trong tương lai.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card p-4 h-100 text-center">
-          <div class="feature-icon mb-3">📊</div>
-          <h5>Phân tích kỹ thuật</h5>
-          <p>Gợi ý điểm mua - bán dựa trên tín hiệu và dữ liệu lịch sử.</p>
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-brain"></i></div>
+          <h5>Phân tích bằng AI</h5>
+          <p>Áp dụng machine learning để đưa ra quyết định đầu tư sáng suốt.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card p-4 h-100 text-center">
-          <div class="feature-icon mb-3">🔔</div>
-          <h5>Cảnh báo biến động</h5>
-          <p>Thông báo ngay khi có biến động đáng chú ý từ thị trường.</p>
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-bell"></i></div>
+          <h5>Cảnh báo thị trường</h5>
+          <p>Thông báo khi cổ phiếu biến động mạnh hoặc xuất hiện cơ hội đầu tư.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-5 bg-light">
+<!-- About -->
+<section id="about" class="py-5">
   <div class="container">
-    <h2 class="section-title text-center" data-aos="fade-up">Giới thiệu FRM AI</h2>
-    <p data-aos="fade-up" class="text-center">FRM AI là nền tảng trí tuệ nhân tạo được thiết kế để hỗ trợ nhà đầu tư ra quyết định thông minh hơn. Bằng cách học từ dữ liệu lịch sử và phân tích xu hướng, công cụ giúp bạn giảm thiểu rủi ro và tối đa hóa lợi nhuận.</p>
+    <h2 class="section-title text-center" data-aos="fade-up">Giới thiệu</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
+        <p>FRM AI là nền tảng ứng dụng trí tuệ nhân tạo được thiết kế để hỗ trợ nhà đầu tư cá nhân và tổ chức tại Việt Nam phân tích thị trường chứng khoán. Công cụ này tích hợp dữ liệu lịch sử, mô hình học sâu và biểu đồ trực quan giúp bạn hiểu rõ hơn về các mã cổ phiếu như VHM, FPT, MWG, và đưa ra quyết định đầu tư đúng thời điểm.</p>
+      </div>
+    </div>
   </div>
 </section>
-
+<!-- Target Users -->
+<section id="users" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Ai nên sử dụng FRM AI?</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-user-graduate"></i></div>
+          <h5>Sinh viên tài chính</h5>
+          <p>Học cách phân tích thị trường với công cụ hiện đại và dữ liệu thực tế.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-chart-pie"></i></div>
+          <h5>Nhà đầu tư cá nhân</h5>
+          <p>Ra quyết định đầu tư hiệu quả hơn dựa trên dữ liệu và AI.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="p-4 feature-card text-center h-100">
+          <div class="icon-box"><i class="fas fa-building"></i></div>
+          <h5>Doanh nghiệp đầu tư</h5>
+          <p>Phân tích nhiều cổ phiếu cùng lúc và nhận cảnh báo thị trường tự động.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Demo Section -->
 <section id="demo" class="py-5">
   <div class="container">
@@ -144,41 +210,82 @@
       <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
         <div class="card p-4">
           <p>Biểu đồ mô phỏng dự báo giá cổ phiếu, ví dụ: VHM, VIC, FPT...</p>
-          <img src="https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/ContentImage/Pennant.png/jcr:content/renditions/original-size.webp" class="img-fluid" alt="Demo Chart">
+          <!-- <img src="https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/ContentImage/Pennant.png/jcr:content/renditions/original-size.webp" class="img-fluid" alt="Demo Chart"> -->
+          
+          <video autoplay muted loop class="video-bg">
+      <source src="./img/Demo.mp4" type="video/mp4">
+      Trình duyệt không hỗ trợ video.
+    </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<section id="faq" class="py-5 bg-lightblue">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Câu hỏi thường gặp</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            FRM AI có miễn phí không?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Bạn có thể dùng bản dùng thử miễn phí trong 14 ngày. Sau đó có thể nâng cấp gói để sử dụng đầy đủ tính năng.</div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Có hỗ trợ dự báo theo từng mã cổ phiếu không?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Có. FRM AI hỗ trợ nhập mã chứng khoán cụ thể (ví dụ: VHM, FPT, MWG...) để phân tích và dự đoán.</div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Dữ liệu được cập nhật từ đâu?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">FRM AI sử dụng dữ liệu từ nguồn mở (vd. VNQuant, Fireant...) kết hợp với mô hình nội bộ để đảm bảo độ chính xác.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
+<!-- Contact -->
+<section id="contact" class="py-5 bg-lightblue">
   <div class="container">
     <h2 class="section-title text-center" data-aos="fade-up">Liên hệ & Dùng thử</h2>
-    <form class="row g-3" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Họ và tên">
+    <div class="row justify-content-center">
+      <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+        <form class="row g-3">
+          <div class="col-md-6"><input type="text" class="form-control" placeholder="Họ và tên" required></div>
+          <div class="col-md-6"><input type="email" class="form-control" placeholder="Email của bạn" required></div>
+          <div class="col-12"><textarea class="form-control" rows="4" placeholder="Lời nhắn..." required></textarea></div>
+          <div class="col-12 text-center"><button class="btn btn-primary px-5">Gửi yêu cầu</button></div>
+        </form>
       </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Email">
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" rows="4" placeholder="Nội dung hoặc yêu cầu"></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button  type="submit" class="btn btn-primary px-5">Gửi yêu cầu</button>
-      </div>
-    </form>
+    </div>
   </div>
 </section>
-<a href="page/layout2.html">Qua layout 2</a>
 <!-- Footer -->
-<footer class="text-center">
-  <p>© 2025 FRM AI. Công cụ AI phân tích chứng khoán tiềm năng hàng đầu Việt Nam.</p>
+<footer>
+  <div class="container text-center">
+    <p class="mb-1">© 2025 FRM AI | Dự đoán chứng khoán bằng Trí tuệ nhân tạo</p>
+    <small>Design with ♥ by FRM Team</small>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
 </body>
 </html>
